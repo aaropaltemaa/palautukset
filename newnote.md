@@ -5,8 +5,7 @@ sequenceDiagram
 
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
     activate server
-    Palvelin vastaanottaa uuden muistiinpanon datan
-    server-->>browser: HTTP 302 Redirect /notes
+    Palvelin vastaanottaa uuden muistiinpanon datan server-->>browser: HTTP 302 Redirect /notes
     deactivate server
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
