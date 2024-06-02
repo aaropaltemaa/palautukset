@@ -30,6 +30,7 @@ let persons = [
 app.use(express.json())
 app.use(morgan('tiny'))
 app.use(cors())
+app.use(express.static('dist'))
 
 app.use(function(req, res, next) {
     if (req.method === 'POST') {
@@ -39,6 +40,12 @@ app.use(function(req, res, next) {
 })
 
 
+app.get('/', (req, res) => {
+    console.log('moro')
+    res.status(204).send()
+  })
+
+  
 app.post('/api/persons', (req, res) => {
     const body = req.body
     const existingPerson = persons.find((person) => person.name === body.name)
