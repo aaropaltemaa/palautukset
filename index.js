@@ -45,7 +45,7 @@ app.get('/', (req, res) => {
     res.status(204).send()
   })
 
-  
+
 app.post('/api/persons', (req, res) => {
     const body = req.body
     const existingPerson = persons.find((person) => person.name === body.name)
@@ -68,6 +68,7 @@ app.post('/api/persons', (req, res) => {
         number: body.number
     }
 
+    console.log(body)
     persons = persons.concat(person)
     res.json(person)
     
