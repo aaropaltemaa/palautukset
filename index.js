@@ -48,9 +48,11 @@ app.post('/api/persons', (req, res) => {
         return res.status(400).json({ error: 'name or number missing' })
     }
 
-    Person.findOne({ name: body.name }).then(existingPerson => {
-        if (existingPerson) {
-            return res.status(400).json({ error: 'name must be unique' })
+    Person.findOne({ name: body.name })
+        .then(existingPerson => {
+            if (existingPerson) {
+                return res.status(400).json({ error: 'name must be unique' })
+           
         } else {
             const person = new Person({
                 name: body.name,
@@ -81,6 +83,21 @@ app.get('/api/persons/:id', (req, res, next) => {
             } else {
                 res.status(404).end()
             }
+        })
+        .catch(error => next(error))
+})
+
+app.put('/api/persons/:id', (req, res, next) => {
+    const body = req.body
+
+    const person = {
+        name: body.name,
+        number: body.number,
+    }
+
+    Person.findByIdAndUpdate(req.params.id, person, {new: true})
+        .then(updatedPerson => {
+            res.json(updatedPerson)
         })
         .catch(error => next(error))
 })
