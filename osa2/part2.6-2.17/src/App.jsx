@@ -31,6 +31,16 @@ const App = () => {
   const addPerson = (event) => {
     event.preventDefault()
     const personObject = { name: newName, number: newNumber }
+    
+    if (newName.length < 3) {
+      handleNotification('Name must be at least 3 letters long', 'fail')
+      return
+    }
+    if (newNumber.length < 8) {
+      handleNotification('Number must be at least 8 characters long', 'fail')
+      return
+    }
+
     const existingPerson = persons.find((person) => person.name === newName)
 
     if (existingPerson) {
@@ -51,14 +61,17 @@ const App = () => {
           })
       }
     } else {
-      personService.create(personObject)
+      personService
+        .create(personObject)
         .then((returnedPerson) => {
           setPersons([...persons, returnedPerson])
           setNewName('')
           setNewNumber('')
           handleNotification(`Added ${returnedPerson.name}`)
         })
-        .catch(console.error)
+        .catch(error => {
+          console.log(error.response.data)
+        })
     }
   }
 
