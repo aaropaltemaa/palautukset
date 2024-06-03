@@ -26,18 +26,6 @@ const errorHandler = (error, req, res, next) => {
   
     if (error.name === 'CastError') {
         return res.status(400).send({ error: 'malformatted id' })
-    } else if (error.name === 'ValidationError') {
-        return res.status(400).send({ error: error.message })
-    } else if (error.code && error.code === 11000) {  
-        return res.status(400).send({ error: 'duplicate key error' })
-    } else if (error.name === 'DocumentNotFoundError') {
-        return res.status(404).send({ error: 'document not found' })
-    } else if (error.name === 'VersionError') {
-        return res.status(409).send({ error: 'version conflict error' })
-    } else if (error.name === 'OverwriteModelError') {
-        return res.status(500).send({ error: 'model overwrite error' })
-    } else if (error.name === 'MongooseServerSelectionError') {
-        return res.status(500).send({ error: 'cannot connect to database' })
     }
 
     next(error)
