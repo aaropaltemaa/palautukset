@@ -1,8 +1,9 @@
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFwYWx0ZW1hYSIsImlkIjoiNjY2MWJjMTc1NjFhMTViNjBjODU4ZGRkIiwiaWF0IjoxNzE3NjgyMzgyLCJleHAiOjE3MTc2ODU5ODJ9.LL0N2DZS5SFykuMHsPChZwQWS9v9xRnflmBEuCrBt1c
 
 {
-    "title": "My cat pee'd on the sofa",
-    "author": "An even angrier owner",
+   "title": "Once upon a time",
+   "author": "John Doe",
     "likes": 0
 }
