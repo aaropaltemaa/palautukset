@@ -1,0 +1,82 @@
+.success {
+  color: rgb(43, 255, 0);
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  font-size: 24px;
+  border-style: solid;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.fail {
+  color: rgb(255, 0, 0);
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  font-size: 24px;
+  border-style: solid;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.h2 {
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(to right, #ff758c, #ff7eb3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.blog {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid lightgrey;
+  border-radius: 10px; /* Increased border radius for a rounder look */
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  font-size: 12px; /* Decreased font size */
+  color: black; /* Changed font color to black */
+  transition: transform 0.3s ease-in-out;
+  text-align: left; /* Aligned text to left */
+}
+
+.blog-title {
+  font-size: 20px; /* Decreased font size for the title */
+  font-weight: bold;
+  color: black; /* Changed font color to black */
+  margin-bottom: 10px;
+  text-decoration: underline; /* Added underline to the title */
+  text-align: left; /* Aligned text to left */
+}
+
+.blog-author {
+  font-size: 14px; /* Decreased font size */
+  color: black; /* Changed font color to black */
+  margin-bottom: 5px;
+  font-style: italic; /* Added italic style to the author */
+  text-align: left; /* Aligned text to left */
+}
+
+.blog-url {
+  font-size: 14px; /* Decreased font size */
+  color: blue; /* Changed font color to blue */
+  margin-bottom: 5px;
+  text-align: left; /* Aligned text to left */
+}
+
+.blog-likes {
+  font-size: 14px; /* Decreased font size */
+  color: green; /* Changed font color to green */
+  margin-bottom: 5px;
+  text-align: left; /* Aligned text to left */
+}
