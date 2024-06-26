@@ -1,0 +1,8 @@
+GET http://localhost:3003/bmi?height=180&weight=72
+Content-Type: application/json
+
+{
+  "height": 180,
+  "weight": 72,
+  "bmi": "Normal (healthy weight)"
+}

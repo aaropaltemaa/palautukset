@@ -1,0 +1,8 @@
+GET http://localhost:3000/api/diagnoses
+Content-Type: application/json
+
+{
+  "code": "M24.2",
+  "name": "Disorder of ligament",
+  "latin": "Morbositas ligamenti"
+}
